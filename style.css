@@ -34,9 +34,43 @@ body{
   position: relative;
   right: 20%;
 }
-.cardFront img{
-  overflow-clip-margin: content-box;
-    overflow: clip;
+
+.cardLogo{
+  position: absolute;
+  bottom: 170px; 
+  left: 32px;
+}
+.cardNumberText{
+  position: absolute;
+  bottom: 70px; 
+  left: 32px;
+  color: hsl(0, 0%, 100%);
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+.textContainer{
+  display: flex;
+  position: absolute;
+  bottom: 32px; 
+  left: 32px;
+  justify-content: space-between; 
+  width: 85%;
+}
+.cardholdernameText, .dateText{
+  color: hsl(0, 0%, 100%);
+  font-size: 15px; 
+  letter-spacing: 2px;
+}
+.cardBack{
+  position: relative;
+}
+.cvcText{
+  position: absolute;
+  bottom: 119px; 
+  left: 355px;
+  color: hsl(0, 0%, 100%);
+  font-size: 15px;
+  letter-spacing: 2px;
 }
 .rightArea{
   display: flex;
