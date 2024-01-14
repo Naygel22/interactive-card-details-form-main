@@ -60,6 +60,7 @@ body{
   color: hsl(0, 0%, 100%);
   font-size: 15px; 
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 .cardBack{
   position: relative;
