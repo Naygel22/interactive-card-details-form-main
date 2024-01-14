@@ -46,8 +46,64 @@ body{
 }
 .detailsContainer{
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 200px);
   grid-template-rows: repeat(4, 1fr);
+  row-gap: 30px;
 }
-
+.cardholdername-item1{
+  grid-column: span 2;
+  grid-row: 1;
+}
+.cardnumber-item2{
+  grid-column: span 2;
+  grid-row: 2;
+}
+.cvc-item4{
+  grid-column: 2;
+  grid-row: 3;
+}
+.confirmButton-item5{
+  grid-column: span 2;
+  grid-row: 4;
+}
+.confirmButton{
+  grid-column: span 2;
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 6px;
+  height: 50px;
+  font-size: 18px;
+}
+.detailsTitle{
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: hsl(278, 68%, 11%);
+  margin-bottom: 8px;
+}
+.inputBar{
+  height: 50px;
+  border-radius: 6px;
+  border: 1px solid hsl(270, 3%, 87%);
+  font-size: 17px;
+  padding-left: 15px;
+  width: 100%;
+  color: hsl(278, 68%, 11%);
+}
+.inputBar:focus{
+  border: 1px solid hsl(278, 68%, 11%);
+  outline: none;
+}
+::placeholder {
+  color: hsl(270, 2%, 77%);
+  opacity: 1; /* Firefox */
+}
+#MM{
+  width: 85px;
+}
+#YY{
+  width: 85px;
+  margin-left: 5px;
+}
 
