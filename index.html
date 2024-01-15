@@ -25,7 +25,12 @@
             <p class="cardNumberText">0000 0000 0000 0000</p>
             <div class="textContainer">
               <p class="cardholdernameText">JANE APPLESEED</p>
-              <p class="dateText">00/00</p>
+                <div class="dateText">
+                   <p class="dateTextMonth">00</p>
+                   <p>/</p>
+                   <p class="dateTextYear">00</p>
+                </div>
+               
             </div>
           
     
@@ -43,26 +48,30 @@
           <div class="cardholdername-item1">
             <p class="detailsTitle">CARDHOLDER NAME</p>
             <input type="text" placeholder="e.g. Jane Appleseed" class="inputBar" id="inputCardholdername">
+            <p class="blankText">Can't be blank</p>
           </div>
 
           <div class="cardnumber-item2">
             <p class="detailsTitle">CARD NUMBER</p>
-            <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="inputBar">
+            <input type="text" placeholder="e.g. 1234 5678 9123 0000" class="inputBar" id="cardNumberInput" maxlength="19">
+            <p class="blankText">Can't be blank</p>
           </div>
 
           <div class="exp-date-item3">
             <p class="detailsTitle">EXP. DATE (MM/YY)</p>
-            <input type="text" placeholder="MM" class="inputBar" id="MM">
-            <input type="text" placeholder="YY" class="inputBar" id="YY">
+            <input type="text" placeholder="MM" class="inputBar" id="MM" maxlength="2">
+            <input type="text" placeholder="YY" class="inputBar" id="YY" maxlength="2">
+            <p class="blankText">Can't be blank</p>
           </div>
 
           <div class="cvc-item4">
             <p class="detailsTitle">CVC</p>
-            <input type="text" placeholder="e.g. 123" class="inputBar">
+            <input type="text" placeholder="e.g. 123" class="inputBar" id="cvcInputBar" maxlength="3">
+            <p class="blankText">Can't be blank</p>
           </div>
 
           <div class="confirmButton-item5">
-            <button class="confirmButton">Confirm</button>
+            <button type="button" class="confirmButton">Confirm</button>
           </div>
             
           
