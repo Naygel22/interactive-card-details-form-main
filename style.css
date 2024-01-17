@@ -104,7 +104,7 @@ body{
   grid-column: span 2;
   grid-row: 4;
 }
-.confirmButton{
+.confirmButton, .continueButton{
   grid-column: span 2;
   background-color: hsl(278, 68%, 11%);
   color: white;
@@ -137,7 +137,7 @@ body{
   color: hsl(270, 2%, 77%);
   opacity: 1; /* Firefox */
 }
-#MM{
+#MM {
   width: 85px;
 }
 #YY{
@@ -145,8 +145,29 @@ body{
   margin-left: 5px;
 }
 .hidden {
-  display: none;
+  display: none; 
+}
+.blankText {
   font-size: 13px;
   color: hsl(0, 100%, 66%); 
 }
-
+.InputBarRedBorder {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+.completeScreen{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.thankyouText{
+  font-size: 30px;
+  letter-spacing: 3px;
+  margin-top: 35px;
+  margin-bottom: 20px;
+  color: hsl(278, 68%, 11%);
+}
+.completeScreenDescription{
+  color: hsl(0, 0%, 52%);
+  font-size: 17px;
+  margin-bottom: 50px;
+}

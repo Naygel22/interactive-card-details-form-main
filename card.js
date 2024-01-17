@@ -16,14 +16,15 @@ const cardNumberInput = document.querySelector('#cardNumberInput');
 const blankTexts = document.querySelectorAll('.blankText');
 const confirmButton = document.querySelector('.confirmButton');
 const inputBars = document.querySelectorAll('.inputBar');
-const hidden = document.querySelector('.hidden');
+const detailsContainer = document.querySelector('.detailsContainer');
+const completeScreen = document.querySelector('.completeScreen');
 
-blankTexts.forEach(blankText => {
+ blankTexts.forEach(blankText => {
   blankText.classList.add('hidden');
 })
-
-
-
+ 
+ completeScreen.classList.add('hidden');
+ 
 inputCardholdername.addEventListener('input', () => {
   cardholdernameText.textContent = inputCardholdername.value;
 });
@@ -49,23 +50,59 @@ cardNumberInput.addEventListener('input', () => {
 });
 
 function showBlankTexts() {
-  inputBars.forEach((inputBar, index) => {
-    const isInputEmpty = inputBar.value === '';
-    const blankText = blankTexts[index];
-
-    if (isInputEmpty) {
-      blankText.classList.remove('hidden');
-    } else {
-      blankText.classList.add('hidden');
-    }
+  // Początkowo ukryj wszystkie komunikaty
+  blankTexts.forEach(blankText => {
+    blankText.classList.add('hidden');
   });
+
+	inputBars.forEach(inputBar => {
+  	inputBar.classList.remove('InputBarRedBorder');
+  })
+
+
+  // Sprawdź poszczególne pola i wyświetl komunikaty zgodnie z warunkami
+  if (inputCardholdername.value === '') {
+    document.querySelector('.cardholdername-item1 .blankText').classList.remove('hidden');
+    document.querySelector('.cardholdername-item1 .inputBar').classList.add('InputBarRedBorder');
+  }
+
+  if (cardNumberInput.value === '') {
+    document.querySelector('.cardnumber-item2 .blankText').classList.remove('hidden');
+    document.querySelector('.cardnumber-item2 .inputBar').classList.add('InputBarRedBorder');
+  }
+
+  const isMMEmpty = MM.value === '';
+  const isYYEmpty = YY.value === '';
+
+  if (isMMEmpty && isYYEmpty) {
+    document.querySelector('.exp-date-item3 .blankText').classList.remove('hidden');
+    document.querySelector('.exp-date-item3 .inputBar').classList.add('InputBarRedBorder');
+  } else if (isMMEmpty || isYYEmpty) {
+    document.querySelector('.exp-date-item3 .blankText').classList.remove('hidden');
+    document.querySelector('.exp-date-item3 .inputBar').classList.add('InputBarRedBorder');
+  }
+
+  if (cvcInputBar.value === '') {
+    document.querySelector('.cvc-item4 .blankText').classList.remove('hidden');
+    document.querySelector('.cvc-item4 .inputBar').classList.add('InputBarRedBorder');
+  } 
+  if (
+  inputCardholdername.value !== '' &&
+  cardNumberInput.value !== '' &&
+  MM.value !== '' &&
+  YY.value !== '' &&
+  cvcInputBar.value !== ''
+  ) {
+  detailsContainer.classList.add('hidden');
+  completeScreen.classList.remove('hidden');
+  }
+  
+  
 }
+
 
 confirmButton.addEventListener('click', () => {
   showBlankTexts();
 });
-
-
-
 
 
