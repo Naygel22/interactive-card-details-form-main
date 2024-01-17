@@ -144,9 +144,7 @@ body{
   width: 85px;
   margin-left: 5px;
 }
-.hidden {
-  display: none; 
-}
+
 .blankText {
   font-size: 13px;
   color: hsl(0, 100%, 66%); 
@@ -171,4 +169,7 @@ body{
   color: hsl(0, 0%, 52%);
   font-size: 17px;
   margin-bottom: 50px;
+}
+.hidden {
+  display: none; 
 }

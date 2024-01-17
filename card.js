@@ -17,13 +17,12 @@ const blankTexts = document.querySelectorAll('.blankText');
 const confirmButton = document.querySelector('.confirmButton');
 const inputBars = document.querySelectorAll('.inputBar');
 const detailsContainer = document.querySelector('.detailsContainer');
-//const completeScreen = document.querySelector('.completeScreen');
+const completeScreen = document.querySelector('.completeScreen');
 
  blankTexts.forEach(blankText => {
   blankText.classList.add('hidden');
 })
  
- //completeScreen.classList.add('hidden');
  
 inputCardholdername.addEventListener('input', () => {
   cardholdernameText.textContent = inputCardholdername.value;
@@ -76,12 +75,17 @@ function showBlankTexts() {
 
   if (isMMEmpty && isYYEmpty) {
     document.querySelector('.exp-date-item3 .blankText').classList.remove('hidden');
-    document.querySelector('.exp-date-item3 .inputBar').classList.add('InputBarRedBorder');
-  } else if (isMMEmpty || isYYEmpty) {
-    document.querySelector('.exp-date-item3 .blankText').classList.remove('hidden');
-    document.querySelector('.exp-date-item3 .inputBar').classList.add('InputBarRedBorder');
-  }
+    document.querySelector('.exp-date-item3 #MM').classList.add('InputBarRedBorder');
+    document.querySelector('.exp-date-item3 #YY').classList.add('InputBarRedBorder');
+    
 
+  } if (isMMEmpty)  {
+    document.querySelector('.exp-date-item3 .blankText').classList.remove('hidden');
+    document.querySelector('.exp-date-item3 #MM').classList.add('InputBarRedBorder');
+  } if (isYYEmpty)  {
+    document.querySelector('.exp-date-item3 .blankText').classList.remove('hidden');
+    document.querySelector('.exp-date-item3 #YY').classList.add('InputBarRedBorder');
+  }
   if (cvcInputBar.value === '') {
     document.querySelector('.cvc-item4 .blankText').classList.remove('hidden');
     document.querySelector('.cvc-item4 .inputBar').classList.add('InputBarRedBorder');
@@ -94,25 +98,10 @@ function showBlankTexts() {
   cvcInputBar.value !== ''
   ) {
   detailsContainer.classList.add('hidden');
-  //completeScreen.classList.remove('hidden');
-  iconComplete.classList.remove('hidden');
-thankyouText.classList.remove('hidden');
-completeScreenDescription.classList.remove('hidden');
-continueButton.classList.remove('hidden');
+  completeScreen.classList.remove('hidden');
+
   }
 }
-
-//hiding element for complete screen
-const iconComplete = document.querySelector('.iconComplete');
-const thankyouText = document.querySelector('.thankyouText');
-const completeScreenDescription = document.querySelector('.completeScreenDescription');
-const continueButton = document.querySelector('.continueButton');
-
-iconComplete.classList.add('hidden');
-thankyouText.classList.add('hidden');
-completeScreenDescription.classList.add('hidden');
-continueButton.classList.add('hidden');
-
 
 confirmButton.addEventListener('click', () => {
   showBlankTexts();
